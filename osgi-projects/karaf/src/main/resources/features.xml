@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="JDBC-bridges-${project.version}"
+          xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+    <repository>mvn:io.hawt/hawtio-karaf/LATEST/xml/features</repository>
+    <feature name="uillirt-osgi-prj" version="${project.version}">
+        <feature>hawtio</feature>
+        <feature>scr</feature>
+        <bundle>mvn:biz.aQute.bnd/bndlib/${bnd.version}</bundle>
+        <bundle>mvn:org.osgi/org.osgi.enterprise/${osgi.enterprise.version}</bundle>
+        <!--interfaces-->
+        <bundle>mvn:com.uillirt.projects/test-service-interface/${project.version}</bundle>
+        <!--implementations-->
+        <bundle>mvn:com.uillirt.projects/test-service/${project.version}</bundle>
+
+        <!--
+        feature:repo-add mvn:com.uillirt.projects/karaf/1.0-SNAPSHOT/xml/features
+        feature:install uillirt-osgi-prj
+        -->
+    </feature>
+</features>
