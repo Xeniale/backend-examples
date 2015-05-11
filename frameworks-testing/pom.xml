@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>luaj</module>
+        <module>hikariCP</module>
     </modules>
     <artifactId>frameworks-testing</artifactId>
     <name>${project.prefix} :: ${module.prefix}</name>

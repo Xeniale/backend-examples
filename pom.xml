@@ -20,7 +20,7 @@
     <properties>
         <project.prefix>Uillirt projects</project.prefix>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.7</java-version>
+        <java-version>1.8</java-version>
         <slf4j.version>1.7.7</slf4j.version>
     </properties>
 
@@ -56,6 +56,7 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
                         <target>${java-version}</target>
+                        <source>${java-version}</source>
                         <fork>true</fork>
                         <meminitial>512m</meminitial>
                         <maxmem>1024m</maxmem>

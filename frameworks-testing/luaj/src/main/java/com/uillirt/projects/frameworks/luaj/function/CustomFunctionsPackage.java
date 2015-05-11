@@ -15,9 +15,6 @@ public class CustomFunctionsPackage extends TwoArgFunction {
 
     private Map<String, Object> source;
 
-    public CustomFunctionsPackage() {
-    }
-
     public CustomFunctionsPackage(Map<String, Object> source) {
         this.source = source;
     }
