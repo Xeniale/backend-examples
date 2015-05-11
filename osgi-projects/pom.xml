@@ -11,8 +11,8 @@
     <packaging>pom</packaging>
 
     <artifactId>osgi-projects</artifactId>
-    <description>${project.prefix} :: ${module.prefix}</description>
-    <name>${project.description}</name>
+    <name>${project.prefix} :: ${module.prefix}</name>
+    <description>${project.name}</description>
 
     <modules>
         <module>test-service-interface</module>
@@ -24,7 +24,6 @@
         <module.prefix>OSGI</module.prefix>
         <maven-bundle-plugin.version>2.5.0</maven-bundle-plugin.version>
         <bnd.version>2.2.0</bnd.version>
-        <slf4j.version>1.7.7</slf4j.version>
         <osgi.core.version>4.3.1</osgi.core.version>
         <osgi.enterprise.version>4.2.0</osgi.enterprise.version>
     </properties>
@@ -63,26 +62,6 @@
                 <artifactId>org.osgi.enterprise</artifactId>
                 <version>${osgi.enterprise.version}</version>
                 <scope>provided</scope>
-            </dependency>
-
-            <!--SLF4J-->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-jdk14</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <!--bnd-->

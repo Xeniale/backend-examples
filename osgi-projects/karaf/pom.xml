@@ -10,8 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>karaf</artifactId>
-    <description>${project.prefix} :: ${module.prefix} :: Karaf features</description>
-    <name>${project.description}</name>
+    <name>${project.prefix} :: ${module.prefix} :: Karaf features</name>
+    <description>${project.name}</description>
 
     <properties>
         <features-target-path>${basedir}/target/features/</features-target-path>

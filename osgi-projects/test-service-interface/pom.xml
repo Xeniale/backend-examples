@@ -12,8 +12,8 @@
     <packaging>bundle</packaging>
 
     <artifactId>test-service-interface</artifactId>
-    <description>${project.prefix} :: ${module.prefix} :: Test Service interface</description>
-    <name>${project.description}</name>
+    <name>${project.prefix} :: ${module.prefix} :: Test Service interface</name>
+    <description>${project.name}</description>
 
     <build>
         <plugins>
