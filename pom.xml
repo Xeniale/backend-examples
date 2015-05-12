@@ -15,6 +15,7 @@
     <modules>
         <module>osgi-projects</module>
         <module>frameworks-testing</module>
+        <module>helpers</module>
     </modules>
 
     <properties>
