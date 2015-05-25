@@ -18,7 +18,7 @@ public class LuajMain {
 
     public static void main(String[] args) {
         Map<String, Object> source = new HashMap<String, Object>() {{
-            put("amount", 115L);
+            put("amount", 1.1);
             put("date", new Date());
         }};
         load(source);
@@ -31,7 +31,7 @@ public class LuajMain {
     }
 
     private static String evaluateLong(String parameterName) {
-        final String script = "return string.format(\"%.2f\",customSrc('" + parameterName + "')/7)";
+        final String script = "local amount = customSrc('" + parameterName + "') return string.format(\"%.2f\", amount ~= nil and tonumber(amount) or 0.0)";
         LuaValue formatScript = luaGlobals.load(script);
         return formatScript.invoke().toString();
     }
