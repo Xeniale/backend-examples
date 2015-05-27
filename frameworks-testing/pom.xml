@@ -13,6 +13,7 @@
         <module>luaj</module>
         <module>hikariCP</module>
         <module>jackson</module>
+        <module>spring-jaxrs</module>
     </modules>
     <artifactId>frameworks-testing</artifactId>
     <name>${project.prefix} :: ${module.prefix}</name>

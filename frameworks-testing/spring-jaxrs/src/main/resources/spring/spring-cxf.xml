@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+        http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+
+    <jaxrs:server id="workService" address="/srv">
+        <jaxrs:serviceBeans>
+            <ref bean="workServiceBean"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:features>
+            <cxf:logging/>
+        </jaxrs:features>
+        <jaxrs:providers>
+            <ref bean="jacksonJsonProvider"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+
+    <bean id="jacksonJsonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
+        <!--<constructor-arg>-->
+            <!--<bean class="com.fasterxml.jackson.databind.ObjectMapper">-->
+                <!--<property name="serializationInclusion">-->
+                    <!--<bean factory-method="valueOf" class="com.fasterxml.jackson.annotation.JsonInclude.Include">-->
+                        <!--<constructor-arg value="NON_NULL"/>-->
+                    <!--</bean>-->
+                <!--</property>-->
+            <!--</bean>-->
+        <!--</constructor-arg>-->
+    </bean>
+
+    <bean id="workServiceBean" class="com.uillirt.projects.frameworks.spring.service.rest.impl.WorkServiceImpl"/>
+
+</beans>
