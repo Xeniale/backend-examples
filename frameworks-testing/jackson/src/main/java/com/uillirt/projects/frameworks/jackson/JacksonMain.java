@@ -2,6 +2,7 @@ package com.uillirt.projects.frameworks.jackson;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.uillirt.projects.frameworks.jackson.mixin.ConfigMixIn;
 import com.uillirt.projects.frameworks.jackson.model.Config;
 
 import java.io.IOException;
@@ -33,18 +34,30 @@ public class JacksonMain {
         config0.setName("config0");
         config0.setConfig(config1);
         ObjectMapper mapper = new ObjectMapper();
+        mapper.addMixIn(Config.class, ConfigMixIn.class);
         StringWriter writer = new StringWriter();
         try {
             mapper.writeValue(writer, config0);
             result = writer.toString();
-            Config cfg = mapper.readValue(result, Config.class);
-            System.out.print(cfg);
+            System.out.println(result);
+      //      Config cfg = mapper.readValue(result, Config.class);
+        //    System.out.print(cfg);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
 
-
+//        ClassLoader classLoader = new ClassLoader() {
+//            @Override
+//            public Class<?> loadClass(String name) throws ClassNotFoundException {
+//                Bundle bundle = FrameworkUtil.getBundle(MetamodelRestService.class);
+//                bundle.loadClass(name);
+//                return bundle.loadClass(name);
+//            }
+//        };
+//
+//        ObjectMapper mapper = new ObjectMapper();
+//        Thread.currentThread().setContextClassLoader(classLoader);
     }
 
 }
