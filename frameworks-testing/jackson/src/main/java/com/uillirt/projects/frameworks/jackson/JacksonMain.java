@@ -8,6 +8,7 @@ import com.uillirt.projects.frameworks.jackson.model.Config;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,11 +34,14 @@ public class JacksonMain {
         config0.setId(0);
         config0.setName("config0");
         config0.setConfig(config1);
+        List<Config> configs = new ArrayList<>();
+        configs.add(config0);
+        configs.add(config1);
         ObjectMapper mapper = new ObjectMapper();
         mapper.addMixIn(Config.class, ConfigMixIn.class);
         StringWriter writer = new StringWriter();
         try {
-            mapper.writeValue(writer, config0);
+            mapper.writeValue(writer, configs);
             result = writer.toString();
             System.out.println(result);
       //      Config cfg = mapper.readValue(result, Config.class);

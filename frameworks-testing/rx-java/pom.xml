@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hikariCP</artifactId>
+        <groupId>com.uillirt.projects</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../hikariCP/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rx-java</artifactId>
+
+    <name>${project.prefix} :: ${module.prefix} :: RxJava</name>
+    <description>${project.name}</description>
+    <dependencies>
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>1.0.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.davidmoten</groupId>
+            <artifactId>rxjava-jdbc</artifactId>
+            <version>0.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.atc.commons.osgi.drivers</groupId>
+            <artifactId>oracle-jdbc-driver-6</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP-java6</artifactId>
+            <version>2.3.2</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+</project>

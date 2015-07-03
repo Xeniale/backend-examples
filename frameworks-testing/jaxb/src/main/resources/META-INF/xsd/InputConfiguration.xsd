@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+
+    <xsd:element name="Configuration" type="Configuration" />
+
+    <xsd:complexType name="Configuration">
+        <xsd:sequence>
+            <xsd:element name="DataSourceRef" type="xsd:string"/>
+            <xsd:element name="EntitySet" type="EntitySet" maxOccurs="unbounded"/>
+            <xsd:element name="bBulkLogLoading" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="EntitySet">
+        <xsd:sequence>
+            <xsd:element name="Entity" type="Entity" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="syncAll" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="topic" type="xsd:string" use="required"/>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="cronExpr" type="xsd:string" use="required"/>
+        <xsd:attribute name="PackageSize" type="xsd:int" default="1"/>
+        <xsd:attribute name="NoTransOnInit" type="xsd:boolean" default="false"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="Entity">
+        <xsd:sequence>
+            <xsd:element name="PrimaryLogTable" type="PrimaryLogTable"/>
+            <xsd:element name="SecondaryLogTable" type="SecondaryLogTable" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="View" type="View"/>
+            <xsd:element name="Fields" type="Fields"/>
+        </xsd:sequence>
+        <xsd:attribute name="name" type="xsd:string" use="required"/>
+        <xsd:attribute name="AlwaysUpdate" type="xsd:boolean" default="false"/>
+        <xsd:attribute name="FullSync" type="xsd:boolean" default="false"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="PrimaryLogTable">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="KeyField" type="xsd:string" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="BeginDateField" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="SecondaryLogTable">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="KeyField" type="xsd:string" maxOccurs="unbounded"/>
+        </xsd:sequence>
+        <xsd:attribute name="BeginDateField" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="View">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"/>
+            <xsd:element name="KeyField" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Fields">
+        <xsd:sequence>
+            <xsd:element name="Field" type="Field" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Field">
+        <xsd:sequence>
+            <xsd:element name="EntityField" type="xsd:string"/>
+            <xsd:element name="DBField" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

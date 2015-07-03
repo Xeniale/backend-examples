@@ -15,6 +15,7 @@
         <module>jackson</module>
         <module>spring-jaxrs</module>
         <module>nio</module>
+        <module>jaxb</module>
     </modules>
     <artifactId>frameworks-testing</artifactId>
     <name>${project.prefix} :: ${module.prefix}</name>
@@ -24,4 +25,22 @@
         <module.prefix>Frameworks</module.prefix>
     </properties>
 
+    <!--<build>-->
+        <!--<pluginManagement>-->
+            <!--<plugins>-->
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                    <!--<version>2.5.1</version>-->
+                    <!--<configuration>-->
+                        <!--<source>1.7</source>-->
+                        <!--<target>1.7</target>-->
+                        <!--<fork>true</fork>-->
+                        <!--<meminitial>512m</meminitial>-->
+                        <!--<maxmem>1024m</maxmem>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+            <!--</plugins>-->
+        <!--</pluginManagement>-->
+    <!--</build>-->
 </project>

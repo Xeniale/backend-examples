@@ -21,9 +21,20 @@
     <properties>
         <project.prefix>Uillirt projects</project.prefix>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.8</java-version>
+        <java-version>1.7</java-version>
         <slf4j.version>1.7.7</slf4j.version>
+        <oracle.jdbc.driver>11.2.0.4.0</oracle.jdbc.driver>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jenkins.at-consulting.ru</id>
+            <url>http://jenkins.at-consulting.ru:8000/artifactory/repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
@@ -45,6 +56,12 @@
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>ru.atc.commons.osgi.drivers</groupId>
+                <artifactId>oracle-jdbc-driver-6</artifactId>
+                <version>${oracle.jdbc.driver}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

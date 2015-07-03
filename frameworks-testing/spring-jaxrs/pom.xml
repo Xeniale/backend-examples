@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-jaxrs</artifactId>
-    <name>${project.prefix} :: ${module.prefix} :: Spring Framework and JaxRS</name>
+    <name>${project.prefix} :: ${module.prefix} :: Spring and JaxRS</name>
     <description>${project.name}</description>
     <packaging>war</packaging>
 

@@ -7,8 +7,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hikariCP</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <name>${project.prefix} :: ${module.prefix} :: HikariCP</name>
+    <modules>
+        <module>../rx-java</module>
+    </modules>
 
     <properties>
         <hikariCP.version>2.3.7</hikariCP.version>
