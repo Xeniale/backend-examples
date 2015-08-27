@@ -21,7 +21,7 @@
     <properties>
         <project.prefix>Uillirt projects</project.prefix>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.7</java-version>
+        <java-version>1.8</java-version>
         <slf4j.version>1.7.7</slf4j.version>
         <oracle.jdbc.driver>11.2.0.4.0</oracle.jdbc.driver>
     </properties>
