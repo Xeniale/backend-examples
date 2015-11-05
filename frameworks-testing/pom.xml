@@ -16,6 +16,7 @@
         <module>spring-jaxrs</module>
         <module>nio</module>
         <module>jaxb</module>
+        <module>jacorb</module>
     </modules>
     <artifactId>frameworks-testing</artifactId>
     <name>${project.prefix} :: ${module.prefix}</name>
