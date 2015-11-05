@@ -16,6 +16,7 @@
 
     <modules>
         <module>file-formatter</module>
+        <module>data-generator</module>
     </modules>
 
     <properties>
@@ -34,6 +35,7 @@
     </dependencyManagement>
 
     <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
         <pluginManagement>
             <plugins>
                 <plugin>
