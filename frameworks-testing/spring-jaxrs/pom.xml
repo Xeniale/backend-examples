@@ -112,7 +112,7 @@
     </dependencies>
 
     <build>
-        <finalName>rest</finalName>
+        <finalName>/rest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -128,9 +128,9 @@
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>${maven-war-plugin-version}</version>
-                        <configuration>
-                            <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                        </configuration>
+                <configuration>
+                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
             </plugin>
 
             <plugin>
