@@ -2,6 +2,7 @@
 <features name="JDBC-bridges-${project.version}"
           xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
     <repository>mvn:io.hawt/hawtio-karaf/LATEST/xml/features</repository>
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf-version}/xml/features</repository>
     <feature name="uillirt-osgi-prj" version="${project.version}">
         <feature>hawtio</feature>
         <feature>scr</feature>
@@ -17,4 +18,20 @@
         feature:install uillirt-osgi-prj
         -->
     </feature>
+    <feature name="uillirt-scala" version="${project.version}">
+        <bundle dependency="true" start-level="80">
+            mvn:org.osgi/org.osgi.compendium/${org-osgi-version}
+        </bundle>
+        <feature version="${cxf-version}">cxf</feature>
+        <bundle start-level="85">mvn:org.scala-lang/scala-library/2.11.7</bundle>
+        <bundle start-level="85">mvn:org.scala-lang/scala-reflect/2.11.7</bundle>
+        <bundle start-level="86">mvn:com.uillirt.projects/scala-examples/${project.version}</bundle>
+
+        <!--
+        feature:repo-add mvn:com.uillirt.projects/karaf/1.0-SNAPSHOT/xml/features
+        feature:install uillirt-scala
+        -->
+
+    </feature>
+
 </features>

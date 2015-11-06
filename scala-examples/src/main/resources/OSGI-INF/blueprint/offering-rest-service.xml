@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:cxf="http://cxf.apache.org/blueprint/core"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+           xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+           xsi:schemaLocation="
+               http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+               http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+               http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd"
+           default-activation="lazy">
+
+    <cm:property-placeholder persistent-id="catalog.management.rest.facade" id="catalog-management-rest-facade" activation="lazy"
+            update-strategy="reload">
+        <cm:default-properties>
+            <cm:property name="context.path" value="/v1"/>
+        </cm:default-properties>
+    </cm:property-placeholder>
+
+    <cxf:bus id="cxfBus">
+        <cxf:features>
+            <cxf:logging/>
+        </cxf:features>
+    </cxf:bus>
+
+    <jaxrs:server id="offeringRestService" address="/v1">
+        <jaxrs:serviceBeans>
+            <ref component-id="offeringRestServiceImpl"/>
+        </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <ref component-id="xmlProvider"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+
+    <bean id="xmlProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider"/>
+
+    <bean id="offeringRestServiceImpl" class="com.uillirt.projects.scala.examples.OfferingRestServiceImpl"/>
+
+</blueprint>
