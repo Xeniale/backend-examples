@@ -17,7 +17,7 @@ public class FuturesMain {
 //            return null;
 //        })
 
-        CompletableFuture<Long> firstSuccessFuture = TestFutureFactory.createSuccessfulFuture(1L);
+        CompletableFuture<Long> firstSuccessFuture = TestFutureFactory.createSuccessfulFuture(15L);
         CompletableFuture<Long> secondSuccessFuture = TestFutureFactory.createSuccessfulFuture(2L);
         CompletableFuture<Long> exceptionalFuture = TestFutureFactory.createExceptionalFuture(3L);
         combineTest(firstSuccessFuture, secondSuccessFuture).whenComplete((res, e) -> {
@@ -30,18 +30,23 @@ public class FuturesMain {
     }
 
     private static CompletableFuture<Long> combineTest(CompletableFuture<Long> firstSuccessFuture, CompletableFuture<Long> secondSuccessFuture) {
-        BiFunction<Long, Long, Long> fn = (val1, val2) -> {
-            LOG.info("Sum vals: {} {}", val1, val2);
-            return val1 + val2;
-        };
+//        BiFunction<Long, Long, Long> fn = (val1, val2) -> {
+//            LOG.info("Sum vals: {} {}", val1, val2);
+//            return val1 + val2;
+//        };
 
         CompletableFuture<Long> resFuture = new CompletableFuture<>();
         firstSuccessFuture.thenApply(val -> {
             if (val == 1L) {
-                resFuture.completeExceptionally(new Exception("Value can't be equal to 1L"));
-                return null;
+                throw new RuntimeException("Value can't be equal to 1L");
             }
             return val;
+        }).thenCompose(TestFutureFactory::createSuccessfulFuture).thenAccept(res -> {
+            resFuture.complete(res);
+        }).exceptionally(t -> {
+            LOG.info("Got exception in createSuccessfulFuture ", t);
+            resFuture.completeExceptionally(t);
+            return null;
         });
         return resFuture;
     }

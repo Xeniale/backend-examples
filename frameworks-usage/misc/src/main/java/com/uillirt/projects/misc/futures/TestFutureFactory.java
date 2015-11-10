@@ -11,14 +11,14 @@ public class TestFutureFactory {
 
     public static <T> CompletableFuture<T> createSuccessfulFuture(T t) {
         CompletableFuture<T> future = new CompletableFuture<>();
-        LOG.info("Got class with name: " + t.getClass().getName());
+        LOG.info("Got class with val: " + t);
         future.complete(t);
         return future;
     }
 
     public static <T> CompletableFuture<T> createExceptionalFuture(T t) {
         CompletableFuture<T> future = new CompletableFuture<>();
-        LOG.info("Got class with name: " + t.getClass().getName());
+        LOG.info("Got class with val: " + t);
         future.completeExceptionally(new Exception("Create Exceptional Future exception!"));
         return future;
     }
