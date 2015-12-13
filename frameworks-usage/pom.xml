@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+
     <modules>
         <module>luaj</module>
         <module>hikariCP</module>
@@ -21,7 +22,9 @@
         <module>jacorb</module>
         <module>tarantool</module>
         <module>redis</module>
+        <module>aop-aspectj</module>
     </modules>
+
     <artifactId>frameworks-usage</artifactId>
     <name>${project.prefix} :: ${module.prefix}</name>
     <description>${project.name}</description>
