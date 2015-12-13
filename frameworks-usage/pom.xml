@@ -22,6 +22,7 @@
         <module>jacorb</module>
         <module>tarantool</module>
         <module>redis</module>
+        <module>misc</module>
         <module>aop-aspectj</module>
     </modules>
 
@@ -36,22 +37,4 @@
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
     </build>
-    <!--<build>-->
-        <!--<pluginManagement>-->
-            <!--<plugins>-->
-                <!--<plugin>-->
-                    <!--<groupId>org.apache.maven.plugins</groupId>-->
-                    <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                    <!--<version>2.5.1</version>-->
-                    <!--<configuration>-->
-                        <!--<source>1.7</source>-->
-                        <!--<target>1.7</target>-->
-                        <!--<fork>true</fork>-->
-                        <!--<meminitial>512m</meminitial>-->
-                        <!--<maxmem>1024m</maxmem>-->
-                    <!--</configuration>-->
-                <!--</plugin>-->
-            <!--</plugins>-->
-        <!--</pluginManagement>-->
-    <!--</build>-->
 </project>
