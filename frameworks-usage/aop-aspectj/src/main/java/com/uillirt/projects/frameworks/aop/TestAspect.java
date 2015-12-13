@@ -1,9 +1,8 @@
-package com.uillirt.projects.frameworks.aop.service;
+package com.uillirt.projects.frameworks.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * Created by kshekhovtsova on 13.12.2015.
@@ -20,4 +19,5 @@ public class TestAspect {
         System.out.println("Aop: executed for (ms): " + (endTime - startTime)/1000000);
         return result;
     }
+
 }
