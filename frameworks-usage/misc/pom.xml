@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>misc</artifactId>
-    <name>${project.prefix} :: ${module.prefix} :: Misc</name>
+    <name>${project.name.prefix} :: ${module.name.prefix} :: Misc</name>
     <description>${project.name}</description>
     <packaging>jar</packaging>
 
