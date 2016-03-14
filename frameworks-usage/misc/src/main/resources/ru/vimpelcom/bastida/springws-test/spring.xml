@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tns="http://tempuri.org/"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://cxf.apache.org/jaxws
+          http://cxf.apache.org/schemas/jaxws.xsd
+          http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd ">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="ru.vimpelcom.bastida.tools.stub.regiondb"/>
+    <context:property-placeholder/>
+
+    <bean id="wsRegionService" class="ru.vimpelcom.bastida.tools.stub.regiondb.IRegionContractImpl"/>
+
+    <jaxws:endpoint id="regionWs"
+                    serviceName="tns:Region"
+                    endpointName="tns:BasicHttpBinding_IRegionContract"
+                    implementor="#wsRegionService"
+                    address="http://${regiondbstub-soapapi.interface}:${regiondbstub-soapapi.port}/WSRegion"
+                    wsdlLocation="/ru/vimpelcom/bastida/tools/stub/regiondb/wsdl/WSRegion.wsdl"/>
+
+</beans>
