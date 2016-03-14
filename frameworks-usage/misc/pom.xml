@@ -20,6 +20,7 @@
         <jackson.version>2.7.1-1</jackson.version>
         <guava.version>18.0</guava.version>
         <spring.version>4.2.1.RELEASE</spring.version>
+        <cxf.version>3.1.3</cxf.version>
     </properties>
 
     <dependencies>
@@ -100,6 +101,22 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-hc</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <version>${cxf.version}</version>
         </dependency>
     </dependencies>
 
