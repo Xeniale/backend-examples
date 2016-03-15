@@ -46,7 +46,7 @@ public abstract class BackboneLauncher<T extends BackboneLauncher.State, S exten
 
     }
 
-    public class LauncherException extends Exception {
+    public static class LauncherException extends Exception {
 
         public LauncherException() {
         }
