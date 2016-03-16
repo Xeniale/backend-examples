@@ -1,10 +1,10 @@
-package com.uillirt.projects.misc.server;
+package com.uillirt.projects.misc.service;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @XmlRootElement(name = "Book")
-public class Book implements Serializable {
+public class BookOld implements Serializable {
 
     private long bookId;
     private String bookName;

@@ -1,11 +1,11 @@
 <wsdl:definitions name="BookShelfServiceService"
-                  targetNamespace="http://wsdlserver.bastida.vimpelcom.ru/"
-                  xmlns:tns="http://wsdlserver.bastida.vimpelcom.ru/Books"
+                  targetNamespace="http://test.soap.service.uillirt.com/"
+                  xmlns:tns="http://test.soap.service.uillirt.com/"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" >
     <wsdl:types>
-        <xs:schema elementFormDefault="unqualified" targetNamespace="http://wsdlserver.bastida.vimpelcom.ru/Books" version="1.0">
+        <xs:schema elementFormDefault="unqualified" targetNamespace="http://test.soap.service.uillirt.com/" version="1.0">
             <xs:element name="Book" type="tns:book"/>
             <xs:element name="getBook" type="tns:getBook"/>
             <xs:element name="getBookResponse" type="tns:getBookResponse"/>
@@ -16,8 +16,8 @@
                     <xs:element minOccurs="0" name="arg0" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:element name="GetBookResponse">
-            </xs:element>
+            <!--<xs:element name="GetBookResponse">-->
+            <!--</xs:element>-->
             <xs:complexType name="getBookResponse">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="return" type="tns:book"/>
@@ -42,33 +42,33 @@
             </xs:complexType>
         </xs:schema>
     </wsdl:types>
-    <wsdl:message name="getBook">
+    <wsdl:message name="GetBook">
         <wsdl:part element="tns:getBook" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="getBookResponse">
+    <wsdl:message name="GetBookResponse">
         <wsdl:part element="tns:getBookResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="insertBookResponse">
+    <wsdl:message name="InsertBookResponse">
         <wsdl:part element="tns:insertBookResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="insertBook">
+    <wsdl:message name="InsertBook">
         <wsdl:part element="tns:insertBook" name="parameters">
         </wsdl:part>
     </wsdl:message>
     <wsdl:portType name="BookShelfService">
         <wsdl:operation name="getBook">
-            <wsdl:input message="tns:getBook" name="getBook">
+            <wsdl:input message="tns:GetBook" name="getBook">
             </wsdl:input>
-            <wsdl:output message="tns:getBookResponse" name="getBookResponse">
+            <wsdl:output message="tns:GetBookResponse" name="getBookResponse">
             </wsdl:output>
         </wsdl:operation>
         <wsdl:operation name="insertBook">
-            <wsdl:input message="tns:insertBook" name="insertBook">
+            <wsdl:input message="tns:InsertBook" name="insertBook">
             </wsdl:input>
-            <wsdl:output message="tns:insertBookResponse" name="insertBookResponse">
+            <wsdl:output message="tns:InsertBookResponse" name="insertBookResponse">
             </wsdl:output>
         </wsdl:operation>
     </wsdl:portType>

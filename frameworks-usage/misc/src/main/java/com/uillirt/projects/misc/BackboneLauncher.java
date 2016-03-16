@@ -144,7 +144,7 @@ public abstract class BackboneLauncher<T extends BackboneLauncher.State, S exten
 
 //        final File configFile = new File(cliParsed.getOptionValue(OPT_config, String.format("%s.conf", appName)));
 
-        Config fallbackConfig = ConfigFactory.load("ru/vimpelcom/bastida/launcher/launcher.conf");
+        Config fallbackConfig = ConfigFactory.load("com/uillirt/projects/testing/streaming/soap/launcher/launcher.conf");
 
 //        final Config mutableConfig;
 //        if (!ignoreConfig) {

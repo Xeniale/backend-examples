@@ -24,6 +24,7 @@
         <module>redis</module>
         <module>misc</module>
         <module>aop-aspectj</module>
+        <module>streaming-soap</module>
     </modules>
 
     <artifactId>frameworks-usage</artifactId>

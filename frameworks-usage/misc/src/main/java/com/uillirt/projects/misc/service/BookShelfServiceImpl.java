@@ -1,11 +1,20 @@
-package com.uillirt.projects.misc.server;
+package com.uillirt.projects.misc.service;
+
+import com.uillirt.service.soap.test.Book;
+import com.uillirt.service.soap.test.BookShelfService;
 
 import javax.jws.WebService;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebService(endpointInterface = "com.uillirt.projects.misc.server.BookShelfService")
+@WebService(endpointInterface = "com.uillirt.service.soap.test.BookShelfService")
 public class BookShelfServiceImpl implements BookShelfService {
+
+    @Override
+    public String insertBook(Book arg0) {
+        return null;
+    }
+
     Map<String, Book> books = new HashMap<String, Book>() {{
         Book testBook = new Book();
         testBook.setAuthor("author");
@@ -13,13 +22,6 @@ public class BookShelfServiceImpl implements BookShelfService {
         testBook.setBookName("book_name");
         put(testBook.getBookName(), testBook);
     }};
-
-    public String insertBook(Book book) {
-        System.out.println("insert");
-        books.put(book.getBookName(), book);
-        return book.getBookName();
-    }
-
 
     public Book getBook(String title) {
         try {

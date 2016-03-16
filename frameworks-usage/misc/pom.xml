@@ -21,6 +21,9 @@
         <guava.version>18.0</guava.version>
         <spring.version>4.2.1.RELEASE</spring.version>
         <cxf.version>3.1.3</cxf.version>
+        <resources-dir>${basedir}/src/main/resources</resources-dir>
+        <wsdl.location.dir>${resources-dir}/com/uillirt/projects/testing/streaming/soap/service/wsdl</wsdl.location.dir>
+        <wsdl.location>${wsdl.location.dir}/BookShelfServiceService.wsdl</wsdl.location>
     </properties>
 
     <dependencies>
@@ -97,11 +100,11 @@
             <artifactId>spring-aop</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-xml</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-xml</artifactId>-->
+            <!--<version>${spring.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -139,10 +142,53 @@
             <version>${cxf.version}</version>
         </dependency>
         <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-io</artifactId>
-        <version>2.4</version>
-    </dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-bindings-soap</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-kernel</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-adb</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-local</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-http</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.axis2</groupId>-->
+            <!--<artifactId>axis2</artifactId>-->
+            <!--<version>1.7.1</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-jaxws</artifactId>
+            <version>1.7.1</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -154,10 +200,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
             <!-- tag::wsdl[] -->
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
@@ -179,6 +225,27 @@
                         </schema>
                     </schemas>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>${cxf.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>${wsdl.location}</wsdl>
+                                </wsdlOption>
+                            </wsdlOptions>
+                        </configuration>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
