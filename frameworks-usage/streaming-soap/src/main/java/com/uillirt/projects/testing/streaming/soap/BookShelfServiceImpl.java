@@ -1,9 +1,8 @@
-package com.uillirt.projects.misc.service;
+package com.uillirt.projects.testing.streaming.soap;
 
 import com.uillirt.service.soap.test.Book;
 import com.uillirt.service.soap.test.BookShelfService;
 
-import javax.jws.WebService;
 import java.util.HashMap;
 import java.util.Map;
 

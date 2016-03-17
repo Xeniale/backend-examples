@@ -4,27 +4,25 @@
        xmlns:jaxws="http://cxf.apache.org/jaxws"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tns="http://test.soap.service.uillirt.com/"
-       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans.xsd
           http://cxf.apache.org/jaxws
           http://cxf.apache.org/schemas/jaxws.xsd
           http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd ">
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.uillirt.projects.misc.service"/>
+    <context:component-scan base-package="com.uillirt.projects.testing.streaming.soap"/>
     <context:property-placeholder/>
 
-    <bean id="bookService" class="com.uillirt.projects.misc.service.BookShelfServiceImpl"/>
+    <bean id="bookService" class="com.uillirt.projects.testing.streaming.soap.BookShelfServiceImpl"/>
 
+    <bean class="org.apache.cxf.transport.servlet.ServletDestinationFactory"/>
     <jaxws:endpoint id="bookServiceWs"
                     serviceName="tns:BookShelfServiceService"
                     endpointName="tns:BookShelfServiceServiceSoapBinding"
                     implementor="#bookService"
-                    address="http://127.0.0.1:2010/"
+                    address="http://localhost:5000/"
                     wsdlLocation="/com/uillirt/projects/testing/streaming/soap/service/wsdl/BookShelfServiceService.wsdl"/>
 
 </beans>

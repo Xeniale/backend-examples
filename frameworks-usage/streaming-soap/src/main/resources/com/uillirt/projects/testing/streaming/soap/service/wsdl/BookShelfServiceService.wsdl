@@ -96,7 +96,7 @@
     </wsdl:binding>
     <wsdl:service name="BookShelfServiceService">
         <wsdl:port binding="tns:BookShelfServiceServiceSoapBinding" name="BookShelfServiceServiceSoapBinding">
-            <soap:address location="http://127.0.0.1:2010/"/>
+            <soap:address location="http://localhost:5000/"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
