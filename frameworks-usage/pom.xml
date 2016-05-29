@@ -25,6 +25,7 @@
         <module>misc</module>
         <module>aop-aspectj</module>
         <module>streaming-soap</module>
+        <module>hystrix</module>
     </modules>
 
     <artifactId>frameworks-usage</artifactId>
