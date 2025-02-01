@@ -3,33 +3,33 @@
           xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
     <repository>mvn:io.hawt/hawtio-karaf/LATEST/xml/features</repository>
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf-version}/xml/features</repository>
-    <feature name="uillirt-osgi-prj" version="${project.version}">
+    <feature name="osgi-prj" version="${project.version}">
         <feature>hawtio</feature>
         <feature>scr</feature>
         <bundle>mvn:biz.aQute.bnd/bndlib/${bnd.version}</bundle>
         <bundle>mvn:org.osgi/org.osgi.enterprise/${osgi.enterprise.version}</bundle>
         <!--interfaces-->
-        <bundle>mvn:com.uillirt.projects/test-service-interface/${project.version}</bundle>
+        <bundle>mvn:com.github.xeniale.backendexamples/test-service-interface/${project.version}</bundle>
         <!--implementations-->
-        <bundle>mvn:com.uillirt.projects/test-service/${project.version}</bundle>
+        <bundle>mvn:com.github.xeniale.backendexamples/test-service/${project.version}</bundle>
 
         <!--
-        feature:repo-add mvn:com.uillirt.projects/karaf/1.0-SNAPSHOT/xml/features
-        feature:install uillirt-osgi-prj
+        feature:repo-add mvn:com.github.xeniale.backendexamples/karaf/1.0-SNAPSHOT/xml/features
+        feature:install osgi-prj
         -->
     </feature>
-    <feature name="uillirt-scala" version="${project.version}">
+    <feature name="scala" version="${project.version}">
         <bundle dependency="true" start-level="80">
             mvn:org.osgi/org.osgi.compendium/${org-osgi-version}
         </bundle>
         <feature version="${cxf-version}">cxf</feature>
         <bundle start-level="85">mvn:org.scala-lang/scala-library/2.11.7</bundle>
         <bundle start-level="85">mvn:org.scala-lang/scala-reflect/2.11.7</bundle>
-        <bundle start-level="86">mvn:com.uillirt.projects/scala-examples/${project.version}</bundle>
+        <bundle start-level="86">mvn:com.github.xeniale.backendexamples/scala-examples/${project.version}</bundle>
 
         <!--
-        feature:repo-add mvn:com.uillirt.projects/karaf/1.0-SNAPSHOT/xml/features
-        feature:install uillirt-scala
+        feature:repo-add mvn:com.github.xeniale.backendexamples/karaf/1.0-SNAPSHOT/xml/features
+        feature:install scala
         -->
 
     </feature>

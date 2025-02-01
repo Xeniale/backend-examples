@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>frameworks-usage</artifactId>
-        <groupId>com.uillirt.projects</groupId>
+        <groupId>com.github.xeniale.backendexamples</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -22,7 +22,7 @@
         <spring.version>4.2.1.RELEASE</spring.version>
         <cxf.version>3.1.3</cxf.version>
         <resources-dir>${basedir}/src/main/resources</resources-dir>
-        <wsdl.location.dir>${resources-dir}/com/uillirt/projects/testing/streaming/soap/service/wsdl</wsdl.location.dir>
+        <wsdl.location.dir>${resources-dir}/com/github/xeniale/projects/testing/streaming/soap/service/wsdl</wsdl.location.dir>
         <wsdl.location>${wsdl.location.dir}/BookShelfServiceService.wsdl</wsdl.location>
     </properties>
 

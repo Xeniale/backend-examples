@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.uillirt.projects</groupId>
-    <artifactId>java-projects</artifactId>
+    <groupId>com.github.xeniale.backendexamples</groupId>
+    <artifactId>backend-examples</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
@@ -20,10 +20,10 @@
     </modules>
 
     <properties>
-        <project.prefix>Uillirt projects</project.prefix>
+        <project.prefix>Backend examples</project.prefix>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java-version>1.8</java-version>
-        <slf4j.version>1.7.12</slf4j.version>
+        <slf4j.version>2.0.16</slf4j.version>
         <oracle.jdbc.driver>11.2.0.4.0</oracle.jdbc.driver>
         <maven-scala-plugin-version>2.15.2</maven-scala-plugin-version>
         <cxf-version>2.7.11</cxf-version>
@@ -33,26 +33,6 @@
         <blueprint-version>1.1.0</blueprint-version>
         <org-osgi-version>4.3.1</org-osgi-version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>jenkins.at-consulting.ru</id>
-            <url>http://jenkins.at-consulting.ru:8000/artifactory/repo/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>onejar-maven-plugin.googlecode.com</id>
-            <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
@@ -166,7 +146,7 @@
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.dstovall</groupId>
+                    <groupId>com.jolira</groupId>
                     <artifactId>onejar-maven-plugin</artifactId>
                     <version>1.4.4</version>
                     <executions>

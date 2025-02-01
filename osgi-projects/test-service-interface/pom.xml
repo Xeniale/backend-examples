@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>osgi-projects</artifactId>
-        <groupId>com.uillirt.projects</groupId>
+        <groupId>com.github.xeniale.backendexamples</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -24,7 +24,7 @@
                 <configuration>
                     <instructions>
                         <Export-Package>
-                            com.uillirt.projects.osgi.services.test.type
+                            com.github.xeniale.backendexamples.osgi.services.test.type
                         </Export-Package>
                     </instructions>
                 </configuration>

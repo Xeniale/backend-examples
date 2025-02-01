@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>frameworks-usage</artifactId>
-        <groupId>com.uillirt.projects</groupId>
+        <groupId>com.github.xeniale.backendexamples</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,8 +14,8 @@
     </modules>
 
     <properties>
-        <hikariCP.version>2.3.7</hikariCP.version>
-        <h2.version>1.4.187</h2.version>
+        <hikariCP.version>2.3.13</hikariCP.version>
+        <h2.version>2.3.232</h2.version>
     </properties>
 
     <dependencies>

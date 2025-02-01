@@ -1,0 +1,102 @@
+<wsdl:definitions name="BookShelfServiceService"
+                  targetNamespace="http://test.soap.service.xeniale.github.com/"
+                  xmlns:tns="http://test.soap.service.xeniale.github.com//"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" >
+
+    <wsdl:types>
+        <xs:schema xmlns:tns="http://test.soap.service.xeniale.github.com/"
+                   elementFormDefault="unqualified"
+                   targetNamespace="http://test.soap.service.xeniale.github.com/" version="1.0">
+            <xs:element name="Book" type="tns:book"/>
+            <xs:element name="getBook" type="tns:getBook"/>
+            <xs:element name="getBookResponse" type="tns:getBookResponse"/>
+            <xs:element name="insertBook" type="tns:insertBook"/>
+            <xs:element name="insertBookResponse" type="tns:insertBookResponse"/>
+            <xs:complexType name="getBook">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getBookResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="tns:book"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="book">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="author" type="xs:string"/>
+                    <xs:element name="bookId" type="xs:long"/>
+                    <xs:element minOccurs="0" name="bookName" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="insertBook">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="tns:book"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="insertBookResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="GetBook">
+        <wsdl:part element="tns:getBook" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetBookResponse">
+        <wsdl:part element="tns:getBookResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="InsertBookResponse">
+        <wsdl:part element="tns:insertBookResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="InsertBook">
+        <wsdl:part element="tns:insertBook" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="BookShelfService">
+        <wsdl:operation name="getBook">
+            <wsdl:input message="tns:GetBook" name="getBook">
+            </wsdl:input>
+            <wsdl:output message="tns:GetBookResponse" name="getBookResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertBook">
+            <wsdl:input message="tns:InsertBook" name="insertBook">
+            </wsdl:input>
+            <wsdl:output message="tns:InsertBookResponse" name="insertBookResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BookShelfServiceServiceSoapBinding" type="tns:BookShelfService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getBook">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getBook">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getBookResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="insertBook">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="insertBook">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="insertBookResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BookShelfServiceService">
+        <wsdl:port binding="tns:BookShelfServiceServiceSoapBinding" name="BookShelfServiceServiceSoapBinding">
+            <soap:address location="http://localhost:5000/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

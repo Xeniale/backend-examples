@@ -34,6 +34,6 @@
 
     <bean id="xmlProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider"/>
 
-    <bean id="offeringRestServiceImpl" class="com.uillirt.projects.scala.examples.OfferingRestServiceImpl"/>
+    <bean id="offeringRestServiceImpl" class="com.github.xeniale.backendexamples.scala.examples.OfferingRestServiceImpl"/>
 
 </blueprint>

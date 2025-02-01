@@ -48,9 +48,9 @@
         <!--</constructor-arg>-->
     </bean>
 
-    <bean id="workServiceBean" class="com.uillirt.projects.frameworks.spring.service.rest.impl.WorkServiceImpl"/>
+    <bean id="workServiceBean" class="com.github.xeniale.backendexamples.frameworks.spring.service.rest.impl.WorkServiceImpl"/>
 
-    <bean name="cfg123" class="com.uillirt.projects.frameworks.spring.model.Work">
+    <bean name="cfg123" class="com.github.xeniale.backendexamples.frameworks.spring.model.Work">
         <property name="id" value="44"/>
         <property name="description" value="Information tech"/>
     </bean>
